@@ -8,25 +8,12 @@ export default defineConfig(() => {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(import.meta.dirname, '.'),
       },
     },
     build: {
-      // Aggressive code-splitting for faster initial load
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
-            'icons': ['lucide-react'],
-          },
-        },
-      },
-      // Smaller chunk size warning threshold
-      chunkSizeWarningLimit: 500,
       // CSS code splitting
       cssCodeSplit: true,
-      // Minification
-      minify: 'esbuild',
       // Target modern browsers for smaller bundles
       target: 'es2020',
     },
