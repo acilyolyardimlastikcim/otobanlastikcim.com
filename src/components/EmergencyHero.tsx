@@ -56,6 +56,7 @@ export const EmergencyHero: React.FC = () => {
           <a
             href={`tel:${PHONE_NUMBER_RAW}`}
             className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-5 py-3.5 sm:py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-black shadow-md shadow-amber-500/25 transition-all cursor-pointer"
+            aria-label="Acil telefonla arayın"
           >
             <Phone className="w-5 h-5 fill-slate-950 shrink-0 animate-bounce" />
             <div className="text-left leading-tight">
@@ -74,6 +75,7 @@ export const EmergencyHero: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-5 py-3.5 sm:py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+            aria-label="WhatsApp ile konum gönderin"
           >
             <WhatsAppIcon className="w-5 h-5 fill-white shrink-0" />
             <div className="text-left leading-tight">

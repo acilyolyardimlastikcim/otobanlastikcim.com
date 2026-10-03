@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
           {/* Col 3: Service Ads Pages */}
           <div className="space-y-2">
             <span className="font-bold text-white block">
-              Seyyar Hizmet Reklam Sayfaları
+              Seyyar Lastik Servisleri
             </span>
             <ul className="space-y-1.5 text-xs text-slate-400">
               <li>

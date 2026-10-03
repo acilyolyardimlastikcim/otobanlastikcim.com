@@ -52,7 +52,7 @@ export const ServicesBento: React.FC = () => {
         
         <div className="max-w-2xl mx-auto mb-10 space-y-2">
           <span className="text-xs font-bold text-blue-700 uppercase tracking-wider font-mono">
-            Hizmetlerimiz & Reklam Sayfaları
+            Hizmet Bölgeleri & Servisler
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-slate-950 font-display">
             Seyyar Lastik Hizmetlerimiz
