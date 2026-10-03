@@ -10,19 +10,23 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-slate-200 shadow-xs">
-      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-2">
         
-        {/* Brand Logo & Name */}
+        {/* Brand Logo & Name - Centered on mobile, left on desktop */}
         <Link
           to="/"
-          className="flex items-center gap-2 text-left min-w-0 shrink cursor-pointer focus:outline-none"
+          className="flex items-center justify-center sm:justify-start w-full sm:w-auto shrink-0 cursor-pointer focus:outline-none"
           aria-label="Anasayfa"
         >
-          <img src="/logo.png" alt="Otoban Lastikcim" className="h-8 sm:h-10 lg:h-12 w-auto max-w-[130px] sm:max-w-[200px] lg:max-w-xs object-contain mix-blend-multiply" />
+          <img 
+            src="/logo_cropped.webp" 
+            alt="Otoban Lastikcim" 
+            className="h-20 sm:h-20 lg:h-28 w-auto max-w-full object-contain mix-blend-multiply" 
+          />
         </Link>
 
         {/* Desktop Quick Nav Links - Absolutely Centered */}
-        <nav className="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-700 absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden lg:flex items-center gap-5 text-sm font-bold text-slate-700 absolute left-1/2 -translate-x-1/2">
           <Link
             to="/"
             className={`hover:text-blue-700 transition-colors cursor-pointer ${
@@ -57,27 +61,27 @@ export const Header: React.FC = () => {
           </Link>
         </nav>
 
-        {/* Quick Contact Header Buttons */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        {/* Quick Contact Header Buttons - HIDDEN ON MOBILE, VISIBLE ON DESKTOP */}
+        <div className="hidden sm:flex items-center justify-end w-full sm:w-auto gap-2 shrink-0">
           <a
             href={getWhatsAppEmergencyUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-2xs"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors shadow-2xs"
             aria-label="WhatsApp üzerinden mesaj gönderin"
           >
-            <WhatsAppIcon className="w-3.5 h-3.5 fill-white" />
+            <WhatsAppIcon className="w-4 h-4 fill-white" />
             <span>WhatsApp</span>
           </a>
 
           <a
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-black text-xs sm:text-sm shadow-xs transition-all whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-black text-sm shadow-xs transition-all whitespace-nowrap"
             title="Hemen Ara"
             aria-label="Hemen telefonla arayın"
           >
-            <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-slate-950 shrink-0" />
-            <span className="font-extrabold">{PHONE_DISPLAY}</span>
+            <Phone className="w-4 h-4 fill-slate-950 shrink-0" />
+            <span className="font-extrabold tracking-wide">{PHONE_DISPLAY}</span>
           </a>
         </div>
 
