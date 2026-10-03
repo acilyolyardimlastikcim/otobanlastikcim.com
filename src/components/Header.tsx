@@ -23,6 +23,14 @@ export const Header: React.FC = () => {
         {/* Desktop Quick Nav Links */}
         <nav className="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-700">
           <Link
+            to="/"
+            className={`hover:text-blue-700 transition-colors cursor-pointer ${
+              currentPath === '/' ? 'text-blue-700' : ''
+            }`}
+          >
+            Anasayfa
+          </Link>
+          <Link
             to="/kuzey-marmara-lastikci"
             className={`hover:text-blue-700 transition-colors cursor-pointer ${
               currentPath === '/kuzey-marmara-lastikci' ? 'text-blue-700' : ''
