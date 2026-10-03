@@ -1,3 +1,4 @@
+import { WhatsAppIcon } from '../../components/icons/WhatsAppIcon';
 import { Link } from '../../components/Link';
 import React from 'react';
 import { Phone, MessageSquare, Disc, CheckCircle2 } from 'lucide-react';
@@ -46,7 +47,7 @@ export const SifirCikmaLastikPage: React.FC = () => {
               rel="noopener noreferrer"
               className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-md shadow-emerald-600/20 transition-all text-center"
             >
-              <MessageSquare className="w-4 h-4 fill-white" />
+              <WhatsAppIcon className="w-4 h-4 fill-white" />
               <span>WhatsApp Ebat Bildir</span>
             </a>
           </div>

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Contact */}
           <div className="space-y-2">
             <span className="text-base font-black text-white font-display block">
-              Can & Kurumsal Lastikçi
+              Otoban Lastikçim
             </span>
             <p className="text-slate-400 leading-relaxed text-xs">
               Silivri, Çatalca, Kuzey Marmara Otoyolu ve TEM güzergahında 7/24 seyyar lastik tamiri, stepne montajı ve lastik temini.
@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright */}
         <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500">
           <div>
-            © {new Date().getFullYear()} Can & Kurumsal Mobil Lastikçi. Silivri, Çatalca, Kuzey Marmara & TEM 7/24 Seyyar Lastik Servisi.
+            © {new Date().getFullYear()} Otoban Lastikçim. Silivri, Çatalca, Kuzey Marmara & TEM 7/24 Seyyar Lastik Servisi.
           </div>
           <div className="flex items-center gap-4 text-xs">
             <Link to="/gizlilik-politikasi" className="hover:text-slate-300 cursor-pointer">

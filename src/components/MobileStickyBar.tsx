@@ -1,3 +1,4 @@
+import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
 import React from 'react';
 import { Phone, MessageSquare } from 'lucide-react';
 import { PHONE_NUMBER_RAW, PHONE_DISPLAY, getWhatsAppEmergencyUrl } from '../data/content';
@@ -14,7 +15,7 @@ export const MobileStickyBar: React.FC = () => {
           className="flex items-center justify-center gap-1.5 px-2 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-emerald-600/20 whitespace-nowrap cursor-pointer"
           title="WhatsApp ile Konum Bildir"
         >
-          <MessageSquare className="w-4 h-4 fill-white shrink-0" />
+          <WhatsAppIcon className="w-4 h-4 fill-white shrink-0" />
           <span className="truncate">Konum Gönder</span>
         </a>
 

@@ -1,3 +1,4 @@
+import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
 import React, { useState } from 'react';
 import { Phone, MessageSquare, Navigation, MapPin, CheckCircle2, Loader2, Clock, ShieldCheck } from 'lucide-react';
 import { PHONE_NUMBER_RAW, PHONE_DISPLAY, getWhatsAppEmergencyUrl } from '../data/content';
@@ -74,7 +75,7 @@ export const EmergencyHero: React.FC = () => {
             rel="noopener noreferrer"
             className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-5 py-3.5 sm:py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
           >
-            <MessageSquare className="w-5 h-5 fill-white shrink-0" />
+            <WhatsAppIcon className="w-5 h-5 fill-white shrink-0" />
             <div className="text-left leading-tight">
               <span className="block text-[10px] uppercase font-medium text-emerald-100 tracking-wider">
                 Hızlı Konum

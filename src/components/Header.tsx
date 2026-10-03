@@ -1,3 +1,4 @@
+import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
 import React from 'react';
 import { Phone, MessageSquare } from 'lucide-react';
 import { PHONE_NUMBER_RAW, PHONE_DISPLAY, getWhatsAppEmergencyUrl } from '../data/content';
@@ -16,21 +17,7 @@ export const Header: React.FC = () => {
           to="/"
           className="flex items-center gap-2 text-left min-w-0 cursor-pointer focus:outline-none"
         >
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center font-bold shrink-0 shadow-2xs">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-              <circle cx="12" cy="12" r="10" />
-              <circle cx="12" cy="12" r="4" fill="currentColor" />
-              <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
-            </svg>
-          </div>
-          <div className="min-w-0">
-            <span className="text-xs sm:text-base font-black tracking-tight text-slate-950 font-display block leading-none truncate">
-              CAN OTO LASTİK
-            </span>
-            <span className="text-[10px] sm:text-[11px] text-slate-500 font-medium block truncate mt-0.5">
-              Silivri · Çatalca · Kuzey Marmara
-            </span>
-          </div>
+          <img src="/logo.png" alt="Otoban Lastikcim" className="h-10 sm:h-12 object-contain mix-blend-multiply" />
         </Link>
 
         {/* Desktop Quick Nav Links */}
@@ -69,7 +56,7 @@ export const Header: React.FC = () => {
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-2xs"
           >
-            <MessageSquare className="w-3.5 h-3.5 fill-white" />
+            <WhatsAppIcon className="w-3.5 h-3.5 fill-white" />
             <span>WhatsApp</span>
           </a>
 

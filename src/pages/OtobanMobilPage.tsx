@@ -1,3 +1,4 @@
+import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
 import { Link } from '../components/Link';
 import React from 'react';
 import { Phone, MessageSquare, Truck, Clock, ShieldCheck, CheckCircle2 } from 'lucide-react';
@@ -53,7 +54,7 @@ export const OtobanMobilPage: React.FC = () => {
               rel="noopener noreferrer"
               className="w-full sm:flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold shadow-lg shadow-emerald-600/20 transition-all text-center"
             >
-              <MessageSquare className="w-5 h-5 fill-white shrink-0" />
+              <WhatsAppIcon className="w-5 h-5 fill-white shrink-0" />
               <div className="text-left leading-tight">
                 <span className="block text-[10px] uppercase font-medium text-emerald-100 tracking-wider">
                   Hızlı Konum
