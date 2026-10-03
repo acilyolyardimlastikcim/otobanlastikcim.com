@@ -1,0 +1,6 @@
+{
+  "name": "Silivri Çatalca Kuzey Marmara 7/24 Mobil Lastikçi",
+  "description": "Silivri, Çatalca, Kuzey Marmara ve TEM Otoyolu için 7/24 mobil lastik tamiri, seyyar lastikçi ve yerinde lastik servisi. 15-25 dakikada acil lastikçi: 0546 686 13 98.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
