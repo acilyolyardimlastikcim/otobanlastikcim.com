@@ -10,18 +10,32 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-slate-200 shadow-xs">
-      <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2">
         
         {/* Brand Logo & Name */}
         <Link
           to="/"
           className="flex items-center gap-2 text-left min-w-0 shrink cursor-pointer focus:outline-none"
         >
-          <img src="/logo.png" alt="Otoban Lastikcim" className="h-8 sm:h-10 lg:h-12 w-auto max-w-[130px] sm:max-w-[200px] lg:max-w-xs object-contain mix-blend-multiply" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center font-bold shrink-0 shadow-2xs">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+            </svg>
+          </div>
+          <div className="min-w-0">
+            <span className="text-sm sm:text-lg font-black tracking-tight font-display block leading-none truncate">
+              <span className="text-red-600">OTOBAN</span><span className="text-slate-950">LASTİKCİM</span>
+            </span>
+            <span className="text-[10px] sm:text-[11px] text-slate-500 font-medium block truncate mt-0.5">
+              7/24 Mobil Lastik Servisi
+            </span>
+          </div>
         </Link>
 
-        {/* Desktop Quick Nav Links */}
-        <nav className="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-700">
+        {/* Desktop Quick Nav Links - Absolutely Centered */}
+        <nav className="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-700 absolute left-1/2 -translate-x-1/2">
           <Link
             to="/"
             className={`hover:text-blue-700 transition-colors cursor-pointer ${
