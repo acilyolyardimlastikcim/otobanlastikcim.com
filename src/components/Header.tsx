@@ -15,9 +15,9 @@ export const Header: React.FC = () => {
         {/* Brand Logo & Name */}
         <Link
           to="/"
-          className="flex items-center gap-2 text-left min-w-0 cursor-pointer focus:outline-none"
+          className="flex items-center gap-2 text-left min-w-0 shrink cursor-pointer focus:outline-none"
         >
-          <img src="/logo.png" alt="Otoban Lastikcim" className="h-10 sm:h-12 object-contain mix-blend-multiply" />
+          <img src="/logo.png" alt="Otoban Lastikcim" className="h-8 sm:h-10 lg:h-12 w-auto max-w-[130px] sm:max-w-[200px] lg:max-w-xs object-contain mix-blend-multiply" />
         </Link>
 
         {/* Desktop Quick Nav Links */}
