@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "name": "Otoban Lastikcim",
+  "description": "7/24 Mobil Lastikçi Servisi - Kuzey Marmara ve TEM",
+  "contact": {
+    "url": "https://otobanlastikcim.com",
+    "email": "info@otobanlastikcim.com"
+  },
+  "resources": {
+    "llms": "https://otobanlastikcim.com/llms.txt"
+  }
+}

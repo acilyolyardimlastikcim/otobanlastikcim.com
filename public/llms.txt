@@ -2,10 +2,17 @@
 
 Kuzey Marmara Otoyolu, TEM ve D-100 karayolunda 7/24 seyyar lastik tamiri, mobil lastikçi, acil yol yardım ve çıkma/sıfır lastik servisi sunan kurumsal bir işletmedir.
 
-## İletişim
-- Telefon: +90 546 686 13 98
-- WhatsApp: +90 546 686 13 98
-- URL: https://otobanlastikcim.com
+## Sitenin Ana Sayfaları
+Aşağıdaki bağlantılardan hizmetlerimize ulaşabilirsiniz:
+- [Anasayfa](https://otobanlastikcim.com/)
+- [Kuzey Marmara Lastikçi](https://otobanlastikcim.com/kuzey-marmara-lastikci)
+- [TEM & Otoban Lastikçi](https://otobanlastikcim.com/otoban-lastikci)
+- [Hizmetlerimiz](https://otobanlastikcim.com/hizmetler)
+
+## İletişim Bağlantıları
+- [Telefon: 0546 686 13 98](tel:+905466861398)
+- [WhatsApp İletişim](https://wa.me/905466861398)
+- [Web Sitemiz](https://otobanlastikcim.com)
 
 ## Hizmet Bölgeleri
 - Silivri
