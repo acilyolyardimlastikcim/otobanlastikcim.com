@@ -23,6 +23,7 @@ import { YerindeTamirPage } from './pages/services/YerindeTamirPage';
 import { StepneDegisimiPage } from './pages/services/StepneDegisimiPage';
 import { SifirCikmaLastikPage } from './pages/services/SifirCikmaLastikPage';
 import { TirKamyonLastikPage } from './pages/services/TirKamyonLastikPage';
+import { HizmetlerPage } from './pages/HizmetlerPage';
 
 // Legal & Privacy Compliance Pages
 import { GizlilikPolitikasiPage } from './pages/legal/GizlilikPolitikasiPage';
@@ -47,6 +48,8 @@ function AppContent() {
         return <OtobanSeyyarPage />;
       case '/otoban-mobil-lastikci':
         return <OtobanMobilPage />;
+      case '/hizmetler':
+        return <HizmetlerPage />;
       case '/hizmetler/yerinde-lastik-tamiri':
         return <YerindeTamirPage />;
       case '/hizmetler/stepne-degisimi':

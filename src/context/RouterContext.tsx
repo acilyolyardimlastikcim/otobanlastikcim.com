@@ -8,6 +8,7 @@ export type PageRoute =
   | '/otoban-lastikci'
   | '/otoban-seyyar-lastikci'
   | '/otoban-mobil-lastikci'
+  | '/hizmetler'
   | '/hizmetler/yerinde-lastik-tamiri'
   | '/hizmetler/stepne-degisimi'
   | '/hizmetler/sifir-cikma-lastik'

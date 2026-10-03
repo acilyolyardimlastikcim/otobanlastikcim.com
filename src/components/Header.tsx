@@ -39,7 +39,7 @@ export const Header: React.FC = () => {
             TEM & Otoban
           </Link>
           <Link
-            to="/hizmetler/yerinde-lastik-tamiri"
+            to="/hizmetler"
             className={`hover:text-blue-700 transition-colors cursor-pointer ${
               currentPath.startsWith('/hizmetler') ? 'text-blue-700' : ''
             }`}
