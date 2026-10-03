@@ -21,15 +21,15 @@ export const Header: React.FC = () => {
           <img 
             src="/logo_cropped.webp" 
             alt="Otoban Lastikcim" 
-            className="h-20 sm:h-20 lg:h-28 w-auto max-w-full object-contain mix-blend-multiply" 
+            className="h-12 sm:h-14 lg:h-16 w-auto max-w-full object-contain mix-blend-multiply" 
           />
         </Link>
 
-        {/* Desktop Quick Nav Links - Absolutely Centered */}
-        <nav className="hidden lg:flex items-center gap-5 text-sm font-bold text-slate-700 absolute left-1/2 -translate-x-1/2">
+        {/* Desktop Quick Nav Links - Fluidly Centered */}
+        <nav className="hidden lg:flex items-center justify-center flex-1 gap-5 text-sm font-bold text-slate-700 px-4">
           <Link
             to="/"
-            className={`hover:text-blue-700 transition-colors cursor-pointer ${
+            className={`hover:text-blue-700 transition-colors cursor-pointer whitespace-nowrap ${
               currentPath === '/' ? 'text-blue-700' : ''
             }`}
           >
@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
           </Link>
           <Link
             to="/kuzey-marmara-lastikci"
-            className={`hover:text-blue-700 transition-colors cursor-pointer ${
+            className={`hover:text-blue-700 transition-colors cursor-pointer whitespace-nowrap ${
               currentPath === '/kuzey-marmara-lastikci' ? 'text-blue-700' : ''
             }`}
           >
@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
           </Link>
           <Link
             to="/otoban-lastikci"
-            className={`hover:text-blue-700 transition-colors cursor-pointer ${
+            className={`hover:text-blue-700 transition-colors cursor-pointer whitespace-nowrap ${
               currentPath === '/otoban-lastikci' ? 'text-blue-700' : ''
             }`}
           >
@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
           </Link>
           <Link
             to="/hizmetler"
-            className={`hover:text-blue-700 transition-colors cursor-pointer ${
+            className={`hover:text-blue-700 transition-colors cursor-pointer whitespace-nowrap ${
               currentPath.startsWith('/hizmetler') ? 'text-blue-700' : ''
             }`}
           >
