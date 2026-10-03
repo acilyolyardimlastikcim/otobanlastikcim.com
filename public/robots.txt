@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://otobanlastikcim.com/sitemap.xml
+Agentmap: https://otobanlastikcim.com/.well-known/ai-catalog.json

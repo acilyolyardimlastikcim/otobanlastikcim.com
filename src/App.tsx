@@ -1,71 +1,74 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { RouterProvider, useRouter } from './context/RouterContext';
 import { Header } from './components/Header';
 import { EmergencyHero } from './components/EmergencyHero';
-import { ServicesBento } from './components/ServicesBento';
-import { HighwayCoverageMap } from './components/HighwayCoverageMap';
-import { HighwaySeoDirectory } from './components/HighwaySeoDirectory';
-import { GoogleProfilesSection } from './components/GoogleProfilesSection';
-import { GoogleReviewsGrid } from './components/GoogleReviewsGrid';
-import { FAQSection } from './components/FAQSection';
-import { Footer } from './components/Footer';
 import { MobileStickyBar } from './components/MobileStickyBar';
 import { SeoHead } from './components/SeoHead';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
-// Dedicated SEO & Google Ads Landing Pages
-import { KuzeyMarmaraLanding } from './pages/KuzeyMarmaraLanding';
-import { KuzeyMarmaraSeyyarPage } from './pages/KuzeyMarmaraSeyyarPage';
-import { KuzeyMarmaraMobilPage } from './pages/KuzeyMarmaraMobilPage';
-import { OtobanLastikciLanding } from './pages/OtobanLastikciLanding';
-import { OtobanSeyyarPage } from './pages/OtobanSeyyarPage';
-import { OtobanMobilPage } from './pages/OtobanMobilPage';
-import { YerindeTamirPage } from './pages/services/YerindeTamirPage';
-import { StepneDegisimiPage } from './pages/services/StepneDegisimiPage';
-import { SifirCikmaLastikPage } from './pages/services/SifirCikmaLastikPage';
-import { TirKamyonLastikPage } from './pages/services/TirKamyonLastikPage';
-import { HizmetlerPage } from './pages/HizmetlerPage';
+// Lazy-loaded below-the-fold components for faster initial paint
+const ServicesBento = lazy(() => import('./components/ServicesBento').then(m => ({ default: m.ServicesBento })));
+const HighwayCoverageMap = lazy(() => import('./components/HighwayCoverageMap').then(m => ({ default: m.HighwayCoverageMap })));
+const HighwaySeoDirectory = lazy(() => import('./components/HighwaySeoDirectory').then(m => ({ default: m.HighwaySeoDirectory })));
+const GoogleProfilesSection = lazy(() => import('./components/GoogleProfilesSection').then(m => ({ default: m.GoogleProfilesSection })));
+const GoogleReviewsGrid = lazy(() => import('./components/GoogleReviewsGrid').then(m => ({ default: m.GoogleReviewsGrid })));
+const FAQSection = lazy(() => import('./components/FAQSection').then(m => ({ default: m.FAQSection })));
+const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
 
-// Legal & Privacy Compliance Pages
-import { GizlilikPolitikasiPage } from './pages/legal/GizlilikPolitikasiPage';
-import { KvkkPage } from './pages/legal/KvkkPage';
-import { KullanimKosullariPage } from './pages/legal/KullanimKosullariPage';
+// Lazy-loaded page components
+const KuzeyMarmaraLanding = lazy(() => import('./pages/KuzeyMarmaraLanding').then(m => ({ default: m.KuzeyMarmaraLanding })));
+const KuzeyMarmaraSeyyarPage = lazy(() => import('./pages/KuzeyMarmaraSeyyarPage').then(m => ({ default: m.KuzeyMarmaraSeyyarPage })));
+const KuzeyMarmaraMobilPage = lazy(() => import('./pages/KuzeyMarmaraMobilPage').then(m => ({ default: m.KuzeyMarmaraMobilPage })));
+const OtobanLastikciLanding = lazy(() => import('./pages/OtobanLastikciLanding').then(m => ({ default: m.OtobanLastikciLanding })));
+const OtobanSeyyarPage = lazy(() => import('./pages/OtobanSeyyarPage').then(m => ({ default: m.OtobanSeyyarPage })));
+const OtobanMobilPage = lazy(() => import('./pages/OtobanMobilPage').then(m => ({ default: m.OtobanMobilPage })));
+const YerindeTamirPage = lazy(() => import('./pages/services/YerindeTamirPage').then(m => ({ default: m.YerindeTamirPage })));
+const StepneDegisimiPage = lazy(() => import('./pages/services/StepneDegisimiPage').then(m => ({ default: m.StepneDegisimiPage })));
+const SifirCikmaLastikPage = lazy(() => import('./pages/services/SifirCikmaLastikPage').then(m => ({ default: m.SifirCikmaLastikPage })));
+const TirKamyonLastikPage = lazy(() => import('./pages/services/TirKamyonLastikPage').then(m => ({ default: m.TirKamyonLastikPage })));
+const HizmetlerPage = lazy(() => import('./pages/HizmetlerPage').then(m => ({ default: m.HizmetlerPage })));
+const GizlilikPolitikasiPage = lazy(() => import('./pages/legal/GizlilikPolitikasiPage').then(m => ({ default: m.GizlilikPolitikasiPage })));
+const KvkkPage = lazy(() => import('./pages/legal/KvkkPage').then(m => ({ default: m.KvkkPage })));
+const KullanimKosullariPage = lazy(() => import('./pages/legal/KullanimKosullariPage').then(m => ({ default: m.KullanimKosullariPage })));
+
+// Minimal fallback for lazy sections
+const SectionFallback = () => <div style={{ minHeight: '200px' }} />;
 
 function AppContent() {
   const { currentPath } = useRouter();
 
-  // Route matching for dedicated Google Ads & SEO pages
   const renderRoute = () => {
     switch (currentPath) {
       case '/kuzey-marmara-lastikci':
-        return <KuzeyMarmaraLanding />;
+        return <Suspense fallback={<SectionFallback />}><KuzeyMarmaraLanding /></Suspense>;
       case '/kuzey-marmara-seyyar-lastikci':
-        return <KuzeyMarmaraSeyyarPage />;
+        return <Suspense fallback={<SectionFallback />}><KuzeyMarmaraSeyyarPage /></Suspense>;
       case '/kuzey-marmara-mobil-lastikci':
-        return <KuzeyMarmaraMobilPage />;
+        return <Suspense fallback={<SectionFallback />}><KuzeyMarmaraMobilPage /></Suspense>;
       case '/otoban-lastikci':
-        return <OtobanLastikciLanding />;
+        return <Suspense fallback={<SectionFallback />}><OtobanLastikciLanding /></Suspense>;
       case '/otoban-seyyar-lastikci':
-        return <OtobanSeyyarPage />;
+        return <Suspense fallback={<SectionFallback />}><OtobanSeyyarPage /></Suspense>;
       case '/otoban-mobil-lastikci':
-        return <OtobanMobilPage />;
+        return <Suspense fallback={<SectionFallback />}><OtobanMobilPage /></Suspense>;
       case '/hizmetler':
-        return <HizmetlerPage />;
+        return <Suspense fallback={<SectionFallback />}><HizmetlerPage /></Suspense>;
       case '/hizmetler/yerinde-lastik-tamiri':
-        return <YerindeTamirPage />;
+        return <Suspense fallback={<SectionFallback />}><YerindeTamirPage /></Suspense>;
       case '/hizmetler/stepne-degisimi':
-        return <StepneDegisimiPage />;
+        return <Suspense fallback={<SectionFallback />}><StepneDegisimiPage /></Suspense>;
       case '/hizmetler/sifir-cikma-lastik':
-        return <SifirCikmaLastikPage />;
+        return <Suspense fallback={<SectionFallback />}><SifirCikmaLastikPage /></Suspense>;
       case '/hizmetler/tir-kamyon-lastik-tamiri':
-        return <TirKamyonLastikPage />;
+        return <Suspense fallback={<SectionFallback />}><TirKamyonLastikPage /></Suspense>;
       case '/gizlilik-politikasi':
-        return <GizlilikPolitikasiPage />;
+        return <Suspense fallback={<SectionFallback />}><GizlilikPolitikasiPage /></Suspense>;
       case '/kvkk':
-        return <KvkkPage />;
+        return <Suspense fallback={<SectionFallback />}><KvkkPage /></Suspense>;
       case '/kullanim-kosullari':
-        return <KullanimKosullariPage />;
+        return <Suspense fallback={<SectionFallback />}><KullanimKosullariPage /></Suspense>;
       default:
-        // Default Home Page
         return (
           <>
             <SeoHead
@@ -73,26 +76,15 @@ function AppContent() {
               description="Kuzey Marmara Otoyolu (O-7), TEM (E-80), Silivri ve Çatalca'da 7/24 seyyar mobil lastikçi. 15 dakikada yerinde tamir ve stepne montajı: 0546 686 13 98."
               canonicalPath="/"
             />
-            {/* SEO Emergency Hero */}
             <EmergencyHero />
-
-            {/* 4 Core Services with links */}
-            <ServicesBento />
-
-            {/* Highway Coverage Corridors & Fast Dispatch */}
-            <HighwayCoverageMap />
-
-            {/* High-Impact SEO Corridor Directory & Exit Guides */}
-            <HighwaySeoDirectory />
-
-            {/* The 2 Registered Google Business Profiles */}
-            <GoogleProfilesSection />
-
-            {/* Verified Google Reviews */}
-            <GoogleReviewsGrid />
-
-            {/* Long-tail SEO FAQs */}
-            <FAQSection />
+            <Suspense fallback={<SectionFallback />}>
+              <ServicesBento />
+              <HighwayCoverageMap />
+              <HighwaySeoDirectory />
+              <GoogleProfilesSection />
+              <GoogleReviewsGrid />
+              <FAQSection />
+            </Suspense>
           </>
         );
     }
@@ -100,19 +92,16 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950 overflow-x-hidden">
-      {/* Clean, Responsive Global Header */}
       <Header />
-
-      {/* Main Content Router */}
       <main className="flex-1 pb-16 lg:pb-0">
         {renderRoute()}
       </main>
-
-      {/* Global Clean Footer with SEO, Service & Legal Links */}
-      <Footer />
-
-      {/* Mobile Sticky Action Bar */}
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <MobileStickyBar />
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }

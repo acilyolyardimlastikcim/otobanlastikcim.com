@@ -11,11 +11,27 @@ export default defineConfig(() => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      // Aggressive code-splitting for faster initial load
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom'],
+            'icons': ['lucide-react'],
+          },
+        },
+      },
+      // Smaller chunk size warning threshold
+      chunkSizeWarningLimit: 500,
+      // CSS code splitting
+      cssCodeSplit: true,
+      // Minification
+      minify: 'esbuild',
+      // Target modern browsers for smaller bundles
+      target: 'es2020',
+    },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };

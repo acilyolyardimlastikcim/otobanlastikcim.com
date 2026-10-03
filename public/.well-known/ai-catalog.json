@@ -1,0 +1,15 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Otoban Lastikcim",
+    "url": "https://otobanlastikcim.com"
+  },
+  "entries": [
+    {
+      "type": "llms-txt",
+      "displayName": "LLM Orientation File",
+      "description": "Orientation file for large language models describing the business, services, and contact info.",
+      "url": "https://otobanlastikcim.com/llms.txt"
+    }
+  ]
+}
